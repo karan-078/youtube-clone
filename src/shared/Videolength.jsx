@@ -1,9 +1,12 @@
 import React from 'react'
-
-const Videolength = () => {
+import moment from 'moment/moment'
+const Videolength = ({time}) => {
+    const VideolengthInSeconds = moment().startOf("day").second(time).format("H:mm:ss");
   return (
-    <div>
-      
+    <div className="absolute bottom-2 right-2 bg-black py-1 px-2 text-white text-xs rounded-md">
+        {
+            VideolengthInSeconds
+        }
     </div>
   )
 }
